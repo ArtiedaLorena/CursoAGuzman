@@ -1,8 +1,7 @@
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 
-public class ArreglosForInversoMutable {
+public class OrdenamientoBurbuja {
     public static void arregloInverso(String[]arreglo){
         int total= arreglo.length;
         int total2= arreglo.length;
@@ -23,17 +22,26 @@ public class ArreglosForInversoMutable {
         };
         int total = productos.length;
 
+        //Metodo Burbuja
+        for (int i=0; i<total; i++){
+            for(int j=0;j<total; j++){
+                if(productos[i].compareTo(productos[j])<0){
+                    String auxiliar= productos[i];
+                    productos[i]=productos[j];
+                    productos[j]=auxiliar;
+                }
+            }
+        }
 
         //Clase helper Arrays
-        Arrays.sort(productos);
-        arregloInverso(productos);
+        //Arrays.sort(productos);
+        //arregloInverso(productos);
         System.out.println("Usando for");
         for(int i = 0; i< total; i++){
             System.out.println("para indice " + i + " : " + productos[i]);
 
         }
-       //Usando collections
-        Collections.reverse(Arrays.asList(productos));
-
+       //Usando collections// Collections.reverse(Arrays.asList(productos));
+        
 }
 }
